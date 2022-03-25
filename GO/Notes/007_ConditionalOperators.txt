@@ -1,0 +1,8 @@
+|----------------------- Conditional Operators -----------------------|
+
+"<"             - used for checking less than
+">"             - used for checking greater than 
+"⩵"            - used for checking equal to
+"<="            - used for checking less than or equal tp
+">="            - used for checking greater than or equal to
+"!="            - used for checking not equal to

@@ -1,0 +1,36 @@
+|----------------------- Loops -----------------------|
+
+- Infinite loop
+
+    Syntax :-
+
+    for {
+        // some stuff to be executed again and again infinite times
+    }
+
+- Kind of while loop in other languages
+    
+    Syntax :-
+
+    for condition {
+        // some stuff to be executed till condition is satisfied
+        // change in condition when required
+    }
+
+- The original "for" loop
+
+    Syntax :-
+
+    for initializing_value; terminating_condition; changes_made_in__initialized_value {
+        // some stuff to be executed again and till changes_made would terminate the loop
+    }
+
+- Use of range in loop
+
+    Syntax :-
+
+    for index, element := range array_or_slice_maybe {
+        /* some stuff to be executed again and again till in range,
+            index is the index of array_or_slice_maybe and
+            element is that element having that index */
+    }

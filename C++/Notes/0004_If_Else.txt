@@ -1,0 +1,13 @@
+-_-_-_-_-_-_-_-_-_-_-_- If/Else -_-_-_-_-_-_-_-_-_-_-_-
+
+Syntax:-
+
+	if(condition) {
+		// some procedure if "condition" is true
+	}
+	else if(other_condition) {
+		// other procedure if "other_condition" is true
+	}
+	else {
+		// if all conditions are false
+	}

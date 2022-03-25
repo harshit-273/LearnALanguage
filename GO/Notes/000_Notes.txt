@@ -1,0 +1,28 @@
+|----------------------- Import more than one modules -----------------------|
+
+import(
+    "someThing",
+    "otherThing",
+    "anyThing"
+)
+
+- Variables declared in GO should be used. 
+- To store a value in variable which will not be used later use "_" as variable name, it is an anonymous variable.
+- Input is always taken in the string format.
+- For printing something import "fmt".
+- For working with input/output import "bufio".
+- For working with standard input from OS import "os".
+- For converting string to some other datatype import "strconv".
+- Arithmetic Operations occurs between same datatypes only.
+- Arithmetic Operations between two operands of some datatype gives the output as same datatype.
+- Arithemetic Operator "/" when used divisor as 0(zero) throws an runtiime error.
+- Conditional Operators can also be used with string datatype, string values would be compared on the basis of ASCII values.
+- "break" keyword is used to break the loop and end loop.
+- "continue" keyword is used to continue in the loop without proceeding the things after continue statment.
+- For the arrays the size of the arrays should be defined.
+- When an array is declared all it's elements are assigned the default value of datatype.
+- Maps do not retain the order, they can just be used to store key-value pairs.
+- Slices and Maps are actually the pointers to address where the real thing is stored.
+    - when you assign one slice/map variable to another variable the values of those are copied to another variable
+      i.e., address stored in the variable is assigned to another variable.
+    - you can pass the slice or map to a function and process them but it is not required to return them. 

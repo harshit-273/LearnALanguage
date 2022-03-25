@@ -1,0 +1,25 @@
+|----------------------- Maps -----------------------|
+
+Syntax :-
+
+// map with initialized values
+var mapName map[keyType]valueType = map[keyType]valueType{
+    keyType_value1 : valueType_value1,
+    keyType_value2 : valueType_value2,
+    keyType_value3 : valueType_value3,
+}
+
+mapName := make(map[keyType]valueType) // creates an empty map
+
+// access values of maps by using key
+mapName[keyType_value1] // has value - valueType_value1
+mapName[keyType_value2] = valueType_value4 // value for the key "keyType_value2" has been changed to value - valueType_value4
+
+mapName[keyType_value4] = keyType_value5 // adding new item to map
+
+delete(mapName, keyType_value5) // deleting the key-value pair
+
+value, ok = mapName[keyType_value5]
+// returns the value in "value" if exists and true in "ok", and if the key does not exists returns default in "value" and false in "ok"
+
+len(mapName) // gives the number of elements present in the map

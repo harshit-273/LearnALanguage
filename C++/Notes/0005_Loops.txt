@@ -1,0 +1,26 @@
+-_-_-_-_-_-_-_-_-_-_-_- Loops -_-_-_-_-_-_-_-_-_-_-_-
+
+Syntax:- 
+
+________________________ For Loop ________________________
+
+	for(initialization; condition; update) {
+		// some repeatative code
+	}
+
+________________________ While Loop ________________________
+
+	while(condition) {
+		// repeatative code
+		// some update to meet the condition
+	}
+
+________________________ Do While Loop ________________________
+
+	do {
+		// repeatative code
+		// some update to meet the condition
+		// this loop always works for the first run no matter the condition is true or not
+	}while(condition);
+
+

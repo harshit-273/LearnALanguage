@@ -1,0 +1,12 @@
+|----------------------- To run in a computer having GO installed -----------------------|
+
+1 - go to the folder where the ".go" file is from terminal(command prompt/power shell).
+2 - run the command "go run fileName.go". /************* This would directly run the program *************/
+
+
+
+|----------------------- To run in a computer not having GO installed -----------------------|
+
+1 - go to the folder where the ".go" file is from terminal(command prompt/power shell).
+2 - run the command "go build fileName.go". /************* This would create a ".exe" file which can run on any other computer without having GO installed *************/
+3 - open the ".exe" file (double click it or type "fileName.exe" in terminal). /************* This would directly run the program *************/

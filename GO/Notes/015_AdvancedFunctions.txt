@@ -1,0 +1,3 @@
+|----------------------- Advanced concepts of Functions -----------------------|
+
+- Function is just like a variable, we can pass it as parameter, return it from a function, called directly

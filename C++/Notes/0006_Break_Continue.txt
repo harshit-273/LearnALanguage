@@ -1,0 +1,10 @@
+-_-_-_-_-_-_-_-_-_-_-_- Break and Continue -_-_-_-_-_-_-_-_-_-_-_-
+
+________________________ Break ________________________
+
+- "break" is used when we want to terminate the loop
+
+________________________ Continue ________________________
+
+- "continue" is used when we want to skip to the next iteration of the loop without proceeding the next part of "continue" in the loop
+

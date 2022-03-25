@@ -1,0 +1,19 @@
+|----------------------- Methods -----------------------|
+
+Syntax :-
+
+type StructName struct {
+    var1Name datatype1
+    var2Name datatype2
+}
+
+// defination of a method
+// use pointer to structure if want to change property of the structure
+func (structVar *StructName) methodName (parameter datatype3)  return_datatype4 { 
+    // some process
+    return valueOfType_datatype4
+}
+
+calling the method
+returnValue := varOfType_StructName.methodName (valueOfType_datatype3)
+

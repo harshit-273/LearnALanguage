@@ -1,0 +1,11 @@
+|----------------------- Pointers -----------------------|
+
+- Pointers are the something which store the value of address where the real value is stored.
+- Using pointers we can change the value of something without touching that thing directly.
+
+Syntax :-
+
+    var someVariable *datatype = &otherVariable_ofType_datatype // assigning the value to a pointer
+
+    *someVariable = otherValue_ofType_datatype // to access the value stored at the someVariable address
+

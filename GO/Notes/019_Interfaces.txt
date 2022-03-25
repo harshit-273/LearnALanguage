@@ -1,0 +1,22 @@
+|----------------------- Interfaces -----------------------|
+
+Syntax :-
+
+// defination of interface
+type interfaceName intface {
+    someMethod(parameterVar datatype1, parameterVar2 datatype2) returnType
+}
+
+// defination of structure
+type StructName struct {
+    // properties
+}
+
+// implementation of method of interface in structure
+func (st StructName) someMethod(parameterVar datatype1, parameterVar2 datatype2) returnType {
+    // somme process
+    return valueOfType_returnType
+}
+
+
+

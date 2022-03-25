@@ -1,0 +1,34 @@
+|----------------------- Functions -----------------------|
+
+Syntax :-
+
+// function declaration
+func functionName(parameterVariable1 dataType1, parameterVariable2 dataType2, ...) (returnDataType, returnDataType2, ...) {
+    // some processing
+    return valueOfType_returnDataType, valueOfType_returnDataType2
+}
+
+// another way of function declaration
+func functionName(parameterVariable1 dataType1, parameterVariable2 dataType2, ...) (returnVariable returnDataType, returnVariable2 returnDataType2, ...) {
+    // some processing 
+    // assigning the value to returnVariable and returnVariable2
+    return
+}
+
+// variadic function - this function can accept any number of argumets of type datatype
+func functionName(parameterVariable...datatype) returnDataType {
+    // some process
+    return valueOfType_returnDataType
+}
+
+// init function - main purpose of init() is to initialize the global variables that cannot be initialized in the global context
+func init(){
+    // executes at the time when package is initialized, so it executes before main function
+}
+
+// calling a function
+functionName(argumentVariable, argumentVariable2, ...) // if nothing is returned
+someVar, otherVar, ... := functionName(argumentVariable, argumentVariable2, ...) // if there are some return values
+
+// doing something excatly before returning the function or finishing the function
+defer // some statement which should be executed excatly before function ends

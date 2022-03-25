@@ -1,0 +1,9 @@
+Syntax :-
+
+if condtion {
+    // some procedure if "condition" is satisfied
+} else if other_condition {
+    // some procedure if "other_condition" is satisfied
+} else {
+    // some procedure if no conditions are satisfied
+}

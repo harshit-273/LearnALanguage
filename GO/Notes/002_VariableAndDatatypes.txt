@@ -1,0 +1,19 @@
+|----------------------- Some of the Data Types -----------------------|
+
+int - for storing nondecimal valued numbers(numbers without ".", e.g. 456).
+float32 - for storing decimal valued numbers(numbers with ".", e.g. 456.321).
+complex64 - for complex numbers(real and imaginery part are float32, e.g. 123.456 + 789.098i).
+string - for storing text like things(use double quotes("") to put a value in this one, e.g. "some text").
+bool - for storing one of the two values( value can be either "true" or "false").
+
+
+Syntax :-
+
+var variableName dataType /************* Declaration *************/
+variableName = someValue /************* Initialization *************/
+
+var variableName dataType = someValue /************* Declaration and Initialization *************/
+
+variableName := someValue or var variableName = someValue /************* In this case type would be automatically applied to variableName *************/
+
+

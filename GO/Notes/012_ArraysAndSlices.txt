@@ -1,0 +1,25 @@
+|----------------------- Arrays -----------------------|
+
+Syntax :-
+
+var arrayName [size_of_outer_array_in_int][size_of_inner_array_in_int]...datatype /************* Declaration *************/
+arrayName[index_of_outer_array][index_of_inner_array]...  = someValue // index is of type "int" ranging between 0-(length - 1) value 
+
+otherArray := [size_in_int]datatype {some_value, other_value, ...}
+
+len(arrayName) // gives the length of array for which it is asked
+
+
+|----------------------- Slices -----------------------|
+
+Syntax :-
+
+var sliArrName [size_in_int]datatype = [size_in_int]datatype{some_value, other_value, ...} // declaration of array for making slice
+
+var sliFullCapacity []datatype = sliArrName[:] // this would give full array to a slice 
+
+var sliName []datatype = sliArrName[startingIndex:endingIndex] // this would give the part of array which starts with "startingIndex" and ends before "endingIndex"
+
+otherSli := make([]datatype, sliceCapacity_in_int) // other way to declare a slice without using array
+
+otherSli = append(otherSli, some_value) // this would add the element "some_value" at the end of this slice

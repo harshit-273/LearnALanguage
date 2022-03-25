@@ -1,0 +1,7 @@
+|----------------------- Arithmetic Operators -----------------------|
+
+"+"             - used for adding two numbers
+"-"             - used for subscrating two numbers
+"*"             - used for multiplying two numbers
+"/"             - used for dividing two numbers
+"%"             - used for finding remainder 

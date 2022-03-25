@@ -1,0 +1,7 @@
+Syntax :-
+
+scanner := bufio.NewScanner(os.Stdin) /************* Creating new Scanner object of input from keyboard *************/
+scanner.Scan() /************* For scanning the input *************/
+input := scanner.Text() /************* "Text()" method returns what has been scanned in scanner object *************/
+
+fmt.Scanf("%s", &input) /************* Used for scanning inputs from keyboard, here string is taken as input *************/

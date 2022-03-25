@@ -1,0 +1,72 @@
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- Operators -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+____________________________________________________ Arithmetic Operators _________________________________________________
+
+Operator 			Operation																	Associativity		Use
+
++			Adds two operands																	Left to Right		A + B
+-			Subtracts right operand from Left 													Left to Right 		A - B
+*			Multipies two operands 																Left to Right 		A * B
+/			Divides left operand by right 														Left to Right 		A / B
+%			gives remainder after integer														Left to Right 		A % B
+
++			Shows number is positive 															Right to Left 		+A
+-			Shows number is negative 															Right to Left 		-A
+
+++			Increment the value by 1 before use 																	++A
+			Increment the value by 1 after use 																		A++
+--			Decrement the value by 1 before use 																	--A      
+			Decrement the value by 1 after use 																		A--
+
+____________________________________________________ Relational Operators _________________________________________________
+
+Operator 			Operation																	Associativity		Use
+
+==			Gives true if two operands are equal												Left to Right 		A == B
+!=			Gives true if two operands are not equal											Left to Right 		A != B
+> 			Gives true if left operand is more than right operand 								Left to Right 		A > B
+<			Gives true if left operand is less than right operand 								Left to Right 		A < B
+>=			Gives true if left operand is more than or equal to right operand 					Left to Right 		A >= B
+<=			Gives true if left operand is less than or equal to right operand 					Left to Right 		A <= B
+
+____________________________________________________ Logical Operators ____________________________________________________
+
+Operator 			Operation																	Associativity		Use
+
+&&			Gives true if both the operands are true											Left to Right 		A && B
+||			Gives true if any one of the operand is true										Left to Right 		A || B
+!			Reverses the logical state of the operand 											Right to Left 		!A
+
+____________________________________________________ Bitwise Operators ____________________________________________________
+
+Operator 			Operation																	Associativity		Use
+
+&			Binary AND. If the both bits of two operands are 1 then only 1						Left to Right 		A & B
+| 			Binary OR. If one of the bit of two operands is 1 then also 1 						Left to Right 		A | B
+^			Binary XOR. If both bits are different then only 1									Left to Right 		A ^ B
+~			Binary Ones complement. Flips the bit 												Right to Left 		~A
+<< 			Binary Left Shift. e.g., N << a would give N * (2 ^ a)								Left to Right 		A << B
+>> 			Binary Right Shift. e.g., N >> a would give N / (2 ^ a) 							Left to Right 		A >> B
+
+____________________________________________________ Assignment Operators __________________________________________________
+
+Operator 			Operation																	Associativity		Use
+
+= 			Assigns value of right operand to left operand 										Right to Left 		A = B
++= 			Adds both operand and assigns to left operand 										Right to Left 		A += B
+-= 			Subtracts right operand from left operand and assigns the result to left 			Right to Left 		A -= B
+*= 			Multiplies both operands and assigns to left operand 								Right to Left 		A *= B
+/= 			Divides left operand with right operand and assigns the result to left 				Right to Left 		A /= B
+
+____________________________________________________ Misc Operators ________________________________________________________
+
+Operator 										Operation															Use
+
+sizeof() 									Returns the size of variable inside brackets 							sizeof(A)
+Condition ? if true : if false				Condiional Operator. 													A ? B : C
+
+
+
+
+Note:- Don't forget to use the brackets when in doubt about the precedence

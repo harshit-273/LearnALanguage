@@ -1,0 +1,30 @@
+|----------------------- Some of the Conversion methods -----------------------|
+
+strconv.Atoi()                  - string to int
+strconv.ParseInt()              - string to int
+strconv.ParseFloat()            - string to float
+strconv.Itoa()                  - int to string
+strconv.FormatFloat()           - float to string
+float64()                       - int to float
+int64()                         - float to int // truncates the value of variable passed, use variable to pass else would give error
+int()                           - float to int
+
+Syntax :-
+
+strconv.Atoi(s string) returns (int)
+
+strconv.ParseInt(s string, base int, bitSize int) returns (i int64, err error)
+
+strconv.ParseFloat(s string, bitSize int) returns (float64, error)
+
+strconv.Itoa(i int) returns (string)
+
+strconv.FormatFloat(float64, fmt byte, prec int, bitSize int) returns (string)
+
+float64(int) returns (float64)
+
+int64(float) returns (int64)
+
+int(float) returns (int)
+
+

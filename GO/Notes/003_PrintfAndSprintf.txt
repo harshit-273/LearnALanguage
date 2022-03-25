@@ -1,0 +1,36 @@
+|----------------------- To print different things using "Printf" or "Sprintf" of "fmt" package -----------------------|
+
+- %v - general                      // for printing value of default type
+- %T - general                      // for printing type of the variable
+- %% - general                      // for printing "%"
+- %t - boolean                      // for printing boolean
+- %b - integer                      // for printing binary
+- %o - integer                      // for printing octal
+- %d - integer                      // for printing decimal
+- %x or %X - integer                // for printing hexadecimal (if "X" is used then hexadecimal would have capital letters)
+- %e - floating                     // for printing scientific notation
+- %f or %F - floating               // for printing no exponent floating
+- %g - floating                     // for printing floating with larger precision
+- %s - string                       // for printing string
+- %q - string                       // for printing string with double quotes
+
+|----------------------- Width, Precision and Padding -----------------------|
+
+- %f                    // default width, default precision
+- %9f                   // width 9, default precision
+- %.2f                  // default width, precision 2
+- %9.2f                 // width 9, precision 2
+- %9.f                  // width 9, precision 0
+- %09d                  // width 9, pads with preceeding 0's
+- %-4                   // width 4, left justified pads with spaces
+
+Syntax :-
+
+var variableName string = fmt.Sprint("...", ...)
+
+fmt.Printf("...", ...)
+
+
+
+
+
