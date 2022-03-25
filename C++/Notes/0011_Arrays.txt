@@ -1,9 +1,0 @@
--_-_-_-_-_-_-_-_-_-_-_- Arrays -_-_-_-_-_-_-_-_-_-_-_-
-
-Syntax:-
-
-	dataType arrayName[size];	// declaration of array, here size is in int
-
-	arrayName[index] = someValue; 	// initlization is in int and it's range is [0,(size - 1)]
-
-	dataType arrayName[size] = {otherValue, someOtherValue, ..., anyOtherValue}; // declaration and initialization
