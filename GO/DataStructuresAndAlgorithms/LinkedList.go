@@ -28,7 +28,7 @@ func createNode() (someNode *Node) {
 func createBegin() {
 	beginNode := createNode()
 
-	if begin != nil {
+	if begin == nil {
 		beginNode.next = begin
 	}
 	begin = beginNode
@@ -36,15 +36,43 @@ func createBegin() {
 
 func createEnd() {
 	endNode := createNode()
-	ptr := begin
-	if begin != nil {
+
+	if begin == nil {
 		begin = endNode
 		return
 	}
+	ptr := begin
 	for ptr.next != nil {
 		ptr = ptr.next
 	}
 	ptr.next = endNode
+}
+
+func deleteBegin() {
+	if begin == nil {
+		fmt.Println("List is already empty")
+	}
+	beginNode := begin
+	fmt.Println("Deleting the begin...", beginNode)
+	begin = begin.next
+	beginNode = nil
+	fmt.Println("Begin is now removed and it's value is set to ", beginNode)
+}
+
+func deleteEnd() {
+	if begin == nil {
+		fmt.Println("List is already empty")
+		return
+	}
+	if begin.next == nil {
+		begin = nil
+		return
+	}
+	ptr := begin
+	for ptr.next.next != nil {
+		ptr = ptr.next
+	}
+	ptr.next = nil
 }
 
 func printLinkedList() {
@@ -72,6 +100,8 @@ func main() {
 		fmt.Println("0 - Exit")
 		fmt.Println("1 - Create node at the beginning of the Linked List")
 		fmt.Println("2 - Create node at the end of the Linked List")
+		fmt.Println("3 - Delete node from the brginning of the Linked List")
+		fmt.Println("4 - Delete node from the end of the Linked List")
 		fmt.Println("99 - Print the data in the whole Linked List")
 		scanner.Scan()
 		choice, _ = strconv.Atoi(scanner.Text())
@@ -84,6 +114,10 @@ func main() {
 			createBegin()
 		case 2:
 			createEnd()
+		case 3:
+			deleteBegin()
+		case 4:
+			deleteEnd()
 		case 99:
 			printLinkedList()
 		}
