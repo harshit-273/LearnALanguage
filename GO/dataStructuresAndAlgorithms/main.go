@@ -10,7 +10,7 @@ import (
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("Please enter the data for the node: ")
+	fmt.Println("Please enter your choice: ")
 	var choice int
 
 	var continueWithLinkedList = true
