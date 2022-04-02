@@ -1,10 +1,9 @@
-package main
+package dataStructures
 
 import (
 	"bufio"
 	"fmt"
 	"os"
-	"strconv"
 )
 
 type Node struct {
@@ -12,9 +11,9 @@ type Node struct {
 	next *Node
 }
 
-var begin *Node = nil
+var Begin *Node = nil
 
-func createNode() (someNode *Node) {
+func CreateNode() (someNode *Node) {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("Please enter the data for the node: ")
 	scanner.Scan()
@@ -25,62 +24,62 @@ func createNode() (someNode *Node) {
 	return
 }
 
-func createBegin() {
-	beginNode := createNode()
+func CreateBegin() {
+	beginNode := CreateNode()
 
-	if begin == nil {
-		beginNode.next = begin
+	if Begin != nil {
+		beginNode.next = Begin
 	}
-	begin = beginNode
+	Begin = beginNode
 }
 
-func createEnd() {
-	endNode := createNode()
+func CreateEnd() {
+	endNode := CreateNode()
 
-	if begin == nil {
-		begin = endNode
+	if Begin == nil {
+		Begin = endNode
 		return
 	}
-	ptr := begin
+	ptr := Begin
 	for ptr.next != nil {
 		ptr = ptr.next
 	}
 	ptr.next = endNode
 }
 
-func deleteBegin() {
-	if begin == nil {
+func DeleteBegin() {
+	if Begin == nil {
 		fmt.Println("List is already empty")
 	}
-	beginNode := begin
-	fmt.Println("Deleting the begin...", beginNode)
-	begin = begin.next
+	beginNode := Begin
+	fmt.Println("Deleting the Begin...", beginNode)
+	Begin = Begin.next
 	beginNode = nil
 	fmt.Println("Begin is now removed and it's value is set to ", beginNode)
 }
 
-func deleteEnd() {
-	if begin == nil {
+func DeleteEnd() {
+	if Begin == nil {
 		fmt.Println("List is already empty")
 		return
 	}
-	if begin.next == nil {
-		begin = nil
+	if Begin.next == nil {
+		Begin = nil
 		return
 	}
-	ptr := begin
+	ptr := Begin
 	for ptr.next.next != nil {
 		ptr = ptr.next
 	}
 	ptr.next = nil
 }
 
-func printLinkedList() {
-	if begin == nil {
+func PrintLinkedList() {
+	if Begin == nil {
 		fmt.Println("Nothing to display, Linked List is empty.")
 		return
 	}
-	var ptr *Node = begin
+	var ptr *Node = Begin
 
 	for ptr != nil {
 		fmt.Print("\"" + ptr.data + "\" ")
@@ -89,6 +88,7 @@ func printLinkedList() {
 	fmt.Println()
 }
 
+/*
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("Please enter the data for the node: ")
@@ -111,16 +111,16 @@ func main() {
 			fmt.Println("Exiting ...")
 			continueWithLinkedList = false
 		case 1:
-			createBegin()
+			CreateBegin()
 		case 2:
-			createEnd()
+			CreateEnd()
 		case 3:
-			deleteBegin()
+			DeleteBegin()
 		case 4:
-			deleteEnd()
+			DeleteEnd()
 		case 99:
-			printLinkedList()
+			PrintLinkedList()
 		}
 
 	}
-}
+}*/
