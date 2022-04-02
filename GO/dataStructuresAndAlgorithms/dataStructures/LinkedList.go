@@ -48,19 +48,18 @@ func CreateEnd() {
 }
 
 func DeleteBegin() {
-	if Begin == nil {
-		fmt.Println("List is already empty")
-	}
 	beginNode := Begin
-	fmt.Println("Deleting the Begin...", beginNode)
+	if beginNode == nil {
+		fmt.Println("It is Empty")
+	}
+
 	Begin = Begin.next
 	beginNode = nil
-	fmt.Println("Begin is now removed and it's value is set to ", beginNode)
 }
 
 func DeleteEnd() {
 	if Begin == nil {
-		fmt.Println("List is already empty")
+		fmt.Println("It is Empty")
 		return
 	}
 	if Begin.next == nil {
@@ -76,7 +75,7 @@ func DeleteEnd() {
 
 func PrintLinkedList() {
 	if Begin == nil {
-		fmt.Println("Nothing to display, Linked List is empty.")
+		fmt.Println("Nothing to display, It is Empty.")
 		return
 	}
 	var ptr *Node = Begin
