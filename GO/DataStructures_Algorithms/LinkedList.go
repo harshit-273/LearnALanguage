@@ -1,9 +1,10 @@
-package dataStructures
+package main
 
 import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 type Node struct {
@@ -50,6 +51,7 @@ func CreateEnd() {
 func DeleteBegin() {
 	if Begin == nil {
 		fmt.Println("List is already empty")
+		return
 	}
 	beginNode := Begin
 	fmt.Println("Deleting the Begin...", beginNode)
@@ -88,10 +90,9 @@ func PrintLinkedList() {
 	fmt.Println()
 }
 
-/*
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("Please enter the data for the node: ")
+	fmt.Println("Please enter your choice: ")
 	var choice int
 
 	var continueWithLinkedList = true
@@ -121,6 +122,5 @@ func main() {
 		case 99:
 			PrintLinkedList()
 		}
-
 	}
-}*/
+}
