@@ -59,6 +59,26 @@ func DFS_Inorder(node *Node) {
 	DFS_Inorder(node.rightNode)
 }
 
+func DFS_Preorder(node *Node) {
+	if node == nil {
+		return
+	}
+
+	fmt.Print(node.data + " ")
+	DFS_Preorder(node.leftNode)
+	DFS_Preorder(node.rightNode)
+}
+
+func DFS_Postorder(node *Node) {
+	if node == nil {
+		return
+	}
+
+	DFS_Postorder(node.leftNode)
+	DFS_Postorder(node.rightNode)
+	fmt.Print(node.data + " ")
+}
+
 func main() {
 	AddToBinaryTree()
 	AddToBinaryTree()
@@ -66,6 +86,6 @@ func main() {
 	AddToBinaryTree()
 	AddToBinaryTree()
 
-	DFS_Inorder(Root)
+	DFS_Preorder(Root)
 
 }
