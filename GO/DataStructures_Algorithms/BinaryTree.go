@@ -79,21 +79,25 @@ func DFS_Postorder(node *Node) {
 	fmt.Print(node.data + " ")
 }
 
-func Search_BinaryTree(node *Node, searchData string) {
+func Search_BinaryTree(node *Node, searchData string) bool { // need to modify this by also returning the address of the node having the searchData
+	var isPresent = false
 	if node == nil {
-		fmt.Print("Data is not present")
-		return
-	} else {
-		if node.data == searchData {
-			fmt.Print("Data is present")
-			return
-		} else if node.data > searchData {
-			Search_BinaryTree(node.leftNode, searchData)
-		} else {
-			Search_BinaryTree(node.rightNode, searchData)
-		}
+		isPresent = false
 	}
+	if node.data == searchData {
+		isPresent = true
+	} else if node.data > searchData {
+		Search_BinaryTree(node.leftNode, searchData)
+	} else {
+		Search_BinaryTree(node.rightNode, searchData)
+	}
+	return isPresent
+}
 
+func RemoveFromBinaryTree(deleteData string) {
+	if !Search_BinaryTree(Root, deleteData) {
+		return
+	}
 }
 
 func main() {
@@ -109,6 +113,10 @@ func main() {
 	fmt.Println("Please enter the data whose existance has to be checked: ")
 	scanner.Scan()
 	var input string = scanner.Text()
-	Search_BinaryTree(Root, input)
+	if Search_BinaryTree(Root, input) {
+		fmt.Print("Data is present")
+	} else {
+		fmt.Print("Data is not present")
+	}
 
 }
