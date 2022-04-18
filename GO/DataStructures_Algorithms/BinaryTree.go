@@ -79,13 +79,36 @@ func DFS_Postorder(node *Node) {
 	fmt.Print(node.data + " ")
 }
 
+func Search_BinaryTree(node *Node, searchData string) {
+	if node == nil {
+		fmt.Print("Data is not present")
+		return
+	} else {
+		if node.data == searchData {
+			fmt.Print("Data is present")
+			return
+		} else if node.data > searchData {
+			Search_BinaryTree(node.leftNode, searchData)
+		} else {
+			Search_BinaryTree(node.rightNode, searchData)
+		}
+	}
+
+}
+
 func main() {
 	AddToBinaryTree()
 	AddToBinaryTree()
 	AddToBinaryTree()
 	AddToBinaryTree()
 	AddToBinaryTree()
+	AddToBinaryTree()
+	AddToBinaryTree()
 
-	DFS_Preorder(Root)
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("Please enter the data whose existance has to be checked: ")
+	scanner.Scan()
+	var input string = scanner.Text()
+	Search_BinaryTree(Root, input)
 
 }
