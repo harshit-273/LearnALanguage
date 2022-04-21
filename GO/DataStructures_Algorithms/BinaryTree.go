@@ -79,26 +79,46 @@ func DFS_Postorder(node *Node) {
 	fmt.Print(node.data + " ")
 }
 
-func Search_BinaryTree(node *Node, searchData string) bool { // need to modify this by also returning the address of the node having the searchData
-	var isPresent = false
+func Search_BinaryTree(node *Node, searchData string) (bool, *Node) { // need to modify this by also returning the address of the node having the searchData
+	var isPresent bool = false
+	var retNode *Node = nil
 	if node == nil {
 		isPresent = false
 	}
 	if node.data == searchData {
 		isPresent = true
+		retNode = node
 	} else if node.data > searchData {
-		Search_BinaryTree(node.leftNode, searchData)
+		isPresent, retNode = Search_BinaryTree(node.leftNode, searchData)
 	} else {
-		Search_BinaryTree(node.rightNode, searchData)
+		isPresent, retNode = Search_BinaryTree(node.rightNode, searchData)
 	}
-	return isPresent
+	return isPresent, retNode
 }
 
+/*	// Still working on this
 func RemoveFromBinaryTree(deleteData string) {
-	if !Search_BinaryTree(Root, deleteData) {
+	isPresent, removeThisNode := Search_BinaryTree(Root, deleteData)
+	if !isPresent {
+		fmt.Println("Data is not Present")
 		return
 	}
+	if removeThisNode.leftNode == nil && removeThisNode.rightNode == nil {
+		removeThisNode = nil
+	} else if removeThisNode.leftNode != nil && removeThisNode.rightNode == nil {
+		removeThisNode = removeThisNode.leftNode
+	} else if removeThisNode.leftNode == nil && removeThisNode.rightNode != nil {
+		removeThisNode = removeThisNode.rightNode
+	} else {
+		removeThisNode = removeThisNode.rightNode
+		var ptr *Node = removeThisNode.rightNode
+		for ptr.leftNode != nil {
+			ptr = ptr.leftNode
+		}
+		ptr = removeThisNode.leftNode
+	}
 }
+*/
 
 func main() {
 	AddToBinaryTree()
@@ -113,10 +133,10 @@ func main() {
 	fmt.Println("Please enter the data whose existance has to be checked: ")
 	scanner.Scan()
 	var input string = scanner.Text()
-	if Search_BinaryTree(Root, input) {
-		fmt.Print("Data is present")
+	isPres, val := Search_BinaryTree(Root, input)
+	if isPres {
+		fmt.Print("Data is present and it's value is " + val.data)
 	} else {
 		fmt.Print("Data is not present")
 	}
-
 }

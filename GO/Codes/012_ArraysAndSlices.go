@@ -28,9 +28,10 @@ func main() {
 	fmt.Println(sli)
 	fmt.Println(cap(sli), len(sli)) // cap function would give how much this slice can store, although the length maybe smaller than or equal to capacity
 
-	otherSli := make([]int, 5) // other way to create a slice without the array
+	otherSli := make([]int, 0) // other way to create a slice without the array
 	fmt.Println(otherSli)
 
 	otherSli = append(otherSli, 1) // this would append the element "1" at the end of the slice
 	fmt.Println(otherSli)
+
 }
