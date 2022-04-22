@@ -96,30 +96,6 @@ func Search_BinaryTree(node *Node, searchData string) (bool, *Node) { // need to
 	return isPresent, retNode
 }
 
-/*	//------------------ Still working on this ------------------
-func RemoveFromBinaryTree(deleteData string) {
-	isPresent, removeThisNode := Search_BinaryTree(Root, deleteData)
-	if !isPresent {
-		fmt.Println("Data is not Present")
-		return
-	}
-	if removeThisNode.leftNode == nil && removeThisNode.rightNode == nil {
-		removeThisNode = nil
-	} else if removeThisNode.leftNode != nil && removeThisNode.rightNode == nil {
-		removeThisNode = removeThisNode.leftNode
-	} else if removeThisNode.leftNode == nil && removeThisNode.rightNode != nil {
-		removeThisNode = removeThisNode.rightNode
-	} else {
-		removeThisNode = removeThisNode.rightNode
-		var ptr *Node = removeThisNode.rightNode
-		for ptr.leftNode != nil {
-			ptr = ptr.leftNode
-		}
-		ptr = removeThisNode.leftNode
-	}
-}
-*/
-
 func main() {
 	AddToBinaryTree()
 	AddToBinaryTree()
