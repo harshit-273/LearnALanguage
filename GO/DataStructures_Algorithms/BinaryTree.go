@@ -79,6 +79,39 @@ func DFS_Postorder(node *Node) {
 	fmt.Print(node.data + " ")
 }
 
+type Queue struct {
+	items [](*Node)
+}
+
+func (q *Queue) Enqueue(node *Node) {
+	q.items = append(q.items, node)
+}
+
+func (q *Queue) Dequeue() *Node {
+	toRemove := q.items[0]
+	q.items = q.items[1:]
+	return toRemove
+}
+
+func BFS_Leverorder() {
+	if Root == nil {
+		return
+	}
+	myQueue := Queue{}
+	myQueue.Enqueue(Root)
+
+	for len(myQueue.items) != 0 {
+		current := myQueue.Dequeue()
+		fmt.Print(current.data + " ")
+		if current.leftNode != nil {
+			myQueue.Enqueue(current.leftNode)
+		}
+		if current.rightNode != nil {
+			myQueue.Enqueue(current.rightNode)
+		}
+	}
+}
+
 func Search_BinaryTree(node *Node, searchData string) (bool, *Node) { // need to modify this by also returning the address of the node having the searchData
 	var isPresent bool = false
 	var retNode *Node = nil
@@ -105,14 +138,5 @@ func main() {
 	AddToBinaryTree()
 	AddToBinaryTree()
 
-	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("Please enter the data whose existance has to be checked: ")
-	scanner.Scan()
-	var input string = scanner.Text()
-	isPres, val := Search_BinaryTree(Root, input)
-	if isPres {
-		fmt.Print("Data is present and it's value is " + val.data)
-	} else {
-		fmt.Print("Data is not present")
-	}
+	BFS_Leverorder()
 }
