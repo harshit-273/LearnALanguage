@@ -90,6 +90,23 @@ func PrintLinkedList() {
 	fmt.Println()
 }
 
+func ReverseLinkedList() {
+	if Begin == nil {
+		fmt.Println("Nothing to display, Linked List is empty.")
+		return
+	}
+	ptr := Begin
+	var prev *Node = nil
+	var temp *Node = nil
+	for ptr != nil {
+		temp = ptr.next
+		ptr.next = prev
+		prev = ptr
+		ptr = temp
+	}
+	Begin = prev
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("Please enter your choice: ")
@@ -103,6 +120,7 @@ func main() {
 		fmt.Println("2 - Create node at the end of the Linked List")
 		fmt.Println("3 - Delete node from the brginning of the Linked List")
 		fmt.Println("4 - Delete node from the end of the Linked List")
+		fmt.Println("5 - Reverse the LinkedList")
 		fmt.Println("99 - Print the data in the whole Linked List")
 		scanner.Scan()
 		choice, _ = strconv.Atoi(scanner.Text())
@@ -119,6 +137,8 @@ func main() {
 			DeleteBegin()
 		case 4:
 			DeleteEnd()
+		case 5:
+			ReverseLinkedList()
 		case 99:
 			PrintLinkedList()
 		}
