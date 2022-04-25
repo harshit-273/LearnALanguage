@@ -50,6 +50,10 @@ func AddToBinaryTree() {
 }
 
 func DFS_Inorder(node *Node) {
+	if Root == nil {
+		fmt.Println("Binary Search Tree is empty, enter some data")
+		return
+	}
 	if node == nil {
 		return
 	}
@@ -60,6 +64,10 @@ func DFS_Inorder(node *Node) {
 }
 
 func DFS_Preorder(node *Node) {
+	if Root == nil {
+		fmt.Println("Binary Search Tree is empty, enter some data")
+		return
+	}
 	if node == nil {
 		return
 	}
@@ -70,6 +78,10 @@ func DFS_Preorder(node *Node) {
 }
 
 func DFS_Postorder(node *Node) {
+	if Root == nil {
+		fmt.Println("Binary Search Tree is empty, enter some data")
+		return
+	}
 	if node == nil {
 		return
 	}
@@ -95,6 +107,7 @@ func (q *Queue) Dequeue() *Node {
 
 func BFS_Leverorder() {
 	if Root == nil {
+		fmt.Println("Binary Search Tree is empty, enter some data")
 		return
 	}
 	myQueue := Queue{}
@@ -129,6 +142,39 @@ func Search_BinaryTree(node *Node, searchData string) (bool, *Node) { // need to
 	return isPresent, retNode
 }
 
+func FindMin(node *Node) *Node {
+	for node.leftNode != nil {
+		node = node.leftNode
+	}
+	return node
+}
+
+func DeleteFromBinaryTree(node *Node, deleteData string) *Node {
+	if Root == nil {
+		fmt.Println("Nothing to delete, already empty")
+	}
+	if node == nil {
+		return node
+	} else if deleteData < node.data {
+		node.leftNode = DeleteFromBinaryTree(node.leftNode, deleteData)
+	} else if deleteData > node.data {
+		node.rightNode = DeleteFromBinaryTree(node.rightNode, deleteData)
+	} else {
+		if node.leftNode == nil && node.rightNode == nil { // No child
+			node = nil
+		} else if node.leftNode == nil { // No left or right child
+			node = node.rightNode
+		} else if node.rightNode == nil {
+			node = node.leftNode
+		} else { // has both children
+			var temp *Node = FindMin(node.rightNode)
+			node.data = temp.data
+			node.rightNode = DeleteFromBinaryTree(node.rightNode, temp.data)
+		}
+	}
+	return node
+}
+
 func main() {
 	AddToBinaryTree()
 	AddToBinaryTree()
@@ -138,5 +184,6 @@ func main() {
 	AddToBinaryTree()
 	AddToBinaryTree()
 
-	BFS_Leverorder()
+	Root = DeleteFromBinaryTree(Root, "4")
+	DFS_Inorder(Root)
 }
