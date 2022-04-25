@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 type Node struct {
@@ -125,21 +126,19 @@ func BFS_Leverorder() {
 	}
 }
 
-func Search_BinaryTree(node *Node, searchData string) (bool, *Node) { // need to modify this by also returning the address of the node having the searchData
+func Search_BinaryTree(node *Node, searchData string) bool { // need to modify this by also returning the address of the node having the searchData
 	var isPresent bool = false
-	var retNode *Node = nil
-	if node == nil {
-		isPresent = false
+	for node != nil || node.data != searchData {
+		if searchData > node.data {
+			node = node.rightNode
+		} else {
+			node = node.leftNode
+		}
 	}
 	if node.data == searchData {
 		isPresent = true
-		retNode = node
-	} else if node.data > searchData {
-		isPresent, retNode = Search_BinaryTree(node.leftNode, searchData)
-	} else {
-		isPresent, retNode = Search_BinaryTree(node.rightNode, searchData)
 	}
-	return isPresent, retNode
+	return isPresent
 }
 
 func FindMin(node *Node) *Node {
@@ -176,14 +175,53 @@ func DeleteFromBinaryTree(node *Node, deleteData string) *Node {
 }
 
 func main() {
-	AddToBinaryTree()
-	AddToBinaryTree()
-	AddToBinaryTree()
-	AddToBinaryTree()
-	AddToBinaryTree()
-	AddToBinaryTree()
-	AddToBinaryTree()
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("Please enter your choice: ")
+	var choice int
+	var anyInput string
 
-	Root = DeleteFromBinaryTree(Root, "4")
-	DFS_Inorder(Root)
+	var continueWithBST = true
+	fmt.Println("Hello! Here you can play with Binary Search Tree as below:")
+	for continueWithBST {
+		fmt.Println("0 - Exit")
+		fmt.Println("1 - Add to the Binary Search Tree")
+		fmt.Println("2 - Print DFS-Inorder")
+		fmt.Println("3 - Print DFS-Preorder")
+		fmt.Println("4 - Print DFS-Postorder")
+		fmt.Println("5 - Print BFS-Levelorder")
+		fmt.Println("6 - Delete from the Binary Search Tree")
+		fmt.Println("7 - Search in the Binary Search Tree")
+		scanner.Scan()
+		choice, _ = strconv.Atoi(scanner.Text())
+
+		switch choice {
+		case 0:
+			fmt.Println("Exiting ...")
+			continueWithBST = false
+		case 1:
+			AddToBinaryTree()
+		case 2:
+			DFS_Inorder(Root)
+		case 3:
+			DFS_Preorder(Root)
+		case 4:
+			DFS_Postorder(Root)
+		case 5:
+			BFS_Leverorder()
+		case 6:
+			fmt.Println("Enter the data to be deleted:")
+			scanner.Scan()
+			anyInput = scanner.Text()
+			DeleteFromBinaryTree(Root, anyInput)
+		case 7:
+			fmt.Println("Enter the data to be searched:")
+			scanner.Scan()
+			anyInput = scanner.Text()
+			isPresent := Search_BinaryTree(Root, anyInput)
+			if isPresent {
+				fmt.Println(anyInput + " is present")
+			}
+		}
+
+	}
 }
