@@ -126,19 +126,20 @@ func BFS_Leverorder() {
 	}
 }
 
-func Search_BinaryTree(node *Node, searchData string) bool { // need to modify this by also returning the address of the node having the searchData
-	var isPresent bool = false
-	for node != nil || node.data != searchData {
-		if searchData > node.data {
-			node = node.rightNode
+func Search_BinaryTree(node *Node, searchData string) {
+	if node == nil {
+		fmt.Print("Data is not present")
+		return
+	} else {
+		if node.data == searchData {
+			fmt.Print("Data is present")
+			return
+		} else if node.data > searchData {
+			Search_BinaryTree(node.leftNode, searchData)
 		} else {
-			node = node.leftNode
+			Search_BinaryTree(node.rightNode, searchData)
 		}
 	}
-	if node.data == searchData {
-		isPresent = true
-	}
-	return isPresent
 }
 
 func FindMin(node *Node) *Node {
@@ -179,49 +180,50 @@ func main() {
 	fmt.Println("Please enter your choice: ")
 	var choice int
 	var anyInput string
-
 	var continueWithBST = true
 	fmt.Println("Hello! Here you can play with Binary Search Tree as below:")
 	for continueWithBST {
 		fmt.Println("0 - Exit")
-		fmt.Println("1 - Add to the Binary Search Tree")
-		fmt.Println("2 - Print DFS-Inorder")
-		fmt.Println("3 - Print DFS-Preorder")
-		fmt.Println("4 - Print DFS-Postorder")
-		fmt.Println("5 - Print BFS-Levelorder")
-		fmt.Println("6 - Delete from the Binary Search Tree")
-		fmt.Println("7 - Search in the Binary Search Tree")
+		fmt.Println("1 - Adding data to the Binary Search Tree")
+		fmt.Println("2 - Deleting data from the Binary Search Tree")
+		fmt.Println("3 - Searching data in the Binary Search Tree")
+		fmt.Println("4 - Depth First Search - Inorder")
+		fmt.Println("5 - Depth First Search - Preorder")
+		fmt.Println("6 - Depth First Search - Postorder")
+		fmt.Println("7 - Breadth First Search - Levelorder")
 		scanner.Scan()
 		choice, _ = strconv.Atoi(scanner.Text())
-
 		switch choice {
 		case 0:
 			fmt.Println("Exiting ...")
 			continueWithBST = false
 		case 1:
 			AddToBinaryTree()
+			fmt.Println()
 		case 2:
-			DFS_Inorder(Root)
-		case 3:
-			DFS_Preorder(Root)
-		case 4:
-			DFS_Postorder(Root)
-		case 5:
-			BFS_Leverorder()
-		case 6:
-			fmt.Println("Enter the data to be deleted:")
+			fmt.Print("Enter the data to be deleted: ")
 			scanner.Scan()
 			anyInput = scanner.Text()
 			DeleteFromBinaryTree(Root, anyInput)
-		case 7:
-			fmt.Println("Enter the data to be searched:")
+			fmt.Println()
+		case 3:
+			fmt.Print("Enter the data to be searched: ")
 			scanner.Scan()
 			anyInput = scanner.Text()
-			isPresent := Search_BinaryTree(Root, anyInput)
-			if isPresent {
-				fmt.Println(anyInput + " is present")
-			}
+			Search_BinaryTree(Root, anyInput)
+			fmt.Println()
+		case 4:
+			DFS_Inorder(Root)
+			fmt.Println()
+		case 5:
+			DFS_Preorder(Root)
+			fmt.Println()
+		case 6:
+			DFS_Postorder(Root)
+			fmt.Println()
+		case 7:
+			BFS_Leverorder()
+			fmt.Println()
 		}
-
 	}
 }
