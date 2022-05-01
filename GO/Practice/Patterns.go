@@ -11,7 +11,7 @@ func main() {
 	//rows := 5
 	//cols := 4
 
-	//Inputs given to print the pattern - 3, 4, 5, 6, 7
+	//Inputs given to print the pattern - 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
 	//input := 9
 
 	/****************************************************
