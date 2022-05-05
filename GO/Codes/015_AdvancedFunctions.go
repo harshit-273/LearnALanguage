@@ -48,7 +48,7 @@ func main() {
 
 	// for explaination of returning a function
 	/*
-		test7 returns a function so it can be assigned to avariable and then it can be called or it can be called directly
+		test7 returns a function so it can be assigned to a variable and then it can be called or it can be called directly
 	*/
 	someFunc := test7("calling a function that returns a function and assigning it to a variable")
 	someFunc()

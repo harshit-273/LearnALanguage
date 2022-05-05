@@ -16,7 +16,7 @@ func functionName(parameterVariable1 dataType1, parameterVariable2 dataType2, ..
 }
 
 // variadic function - this function can accept any number of argumets of type datatype
-func functionName(parameterVariable...datatype) returnDataType {
+func functionName(parameterVariable ...datatype) returnDataType {
     // some process
     return valueOfType_returnDataType
 }
@@ -30,5 +30,5 @@ func init(){
 functionName(argumentVariable, argumentVariable2, ...) // if nothing is returned
 someVar, otherVar, ... := functionName(argumentVariable, argumentVariable2, ...) // if there are some return values
 
-// doing something excatly before returning the function or finishing the function
+// doing something immediately before returning the function or finishing the function
 defer // some statement which should be executed excatly before function ends
