@@ -8,7 +8,7 @@ import "fmt"
 
 func FibonacciSeries(terms int) []int {
 	var fibonacci []int = make([]int, 0)
-	fibonacci = append(fibonacci, 1)
+	fibonacci = append(fibonacci, 0)
 	fibonacci = append(fibonacci, 1)
 
 	if terms > 2 {
@@ -20,5 +20,5 @@ func FibonacciSeries(terms int) []int {
 }
 
 func main() {
-	fmt.Print(FibonacciSeries(5))
+	fmt.Print(FibonacciSeries(10))
 }
