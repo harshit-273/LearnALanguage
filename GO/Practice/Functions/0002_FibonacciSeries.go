@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 /*
-	- Here we will be learnig to make a function that takes number of terms and prints that number of fibonacci terms.
+	- Here we will be learnig to make a function that takes number of terms and returns that number of fibonacci terms.
 */
 
-func FibonacciSeries(terms int) []int {
+func fibonacciSeries(terms int) []int {
 	var fibonacci []int = make([]int, 0)
 	fibonacci = append(fibonacci, 0)
 	fibonacci = append(fibonacci, 1)
@@ -20,5 +20,5 @@ func FibonacciSeries(terms int) []int {
 }
 
 func main() {
-	fmt.Print(FibonacciSeries(10))
+	fmt.Print(fibonacciSeries(10))
 }
