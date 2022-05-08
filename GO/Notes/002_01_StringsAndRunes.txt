@@ -1,0 +1,18 @@
+|----------------------- Rune -----------------------|
+
+- Rune can be considered as a single character which has UTF-8(more than ASCII), but they are integer value of Unicode.
+- Rune are like characters in the C language(if you know it), but just better.
+
+|----------------------- String -----------------------|
+
+- String is just the group of the rune.
+- like an array of the rune.
+
+Syntax :-
+
+var runeName rune = someValue // Initialization and Declaration
+
+runeName := "some string"[someInteger] // getting character from the string
+
+
+

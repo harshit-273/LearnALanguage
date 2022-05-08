@@ -13,6 +13,7 @@
 - %g - floating                     // for printing floating with larger precision
 - %s - string                       // for printing string
 - %q - string                       // for printing string with double quotes
+- %c - rune                         // for printing rune
 
 |----------------------- Width, Precision and Padding -----------------------|
 

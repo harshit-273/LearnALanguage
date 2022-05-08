@@ -25,4 +25,12 @@ func main() {
 	intFloat := int64(someFloat)
 	fmt.Printf("from float to int : %d\n", intFloat)
 
+	var str string = "some😁string"
+	runeString := []rune(str)
+	fmt.Print("from string to array of runes : ")
+	fmt.Printf("%v\n", runeString)
+
+	stringRune := string(runeString)
+	fmt.Printf("from array of runes to string : %q\n", stringRune)
+
 }
