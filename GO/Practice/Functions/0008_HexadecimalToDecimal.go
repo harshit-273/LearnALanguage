@@ -7,7 +7,7 @@ import "fmt"
 */
 
 func hexadecimalToDecimal(hexNum string) int {
-	var hexaMap map[rune]int = map[rune]int{
+	var hexaToDeciMap map[rune]int = map[rune]int{
 		'0': 0,
 		'1': 1,
 		'2': 2,
@@ -30,7 +30,7 @@ func hexadecimalToDecimal(hexNum string) int {
 
 	for i := (len(hexNum) - 1); i >= 0; i-- {
 		curr := hexNum[i]
-		deciNum = deciNum + (hexaMap[rune(curr)] * mul16)
+		deciNum = deciNum + (hexaToDeciMap[rune(curr)] * mul16)
 		mul16 *= 16
 	}
 	return deciNum
