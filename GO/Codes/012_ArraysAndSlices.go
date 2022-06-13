@@ -38,11 +38,7 @@ func main() {
 
 	////////////////////				Two Dimensional Slices 				////////////////////
 
-	sliOfSlices := make([][]int, 0) // make a 2D slice of length 4
-
-	for sliIndex := range sliOfSlices {
-		sliOfSlices[sliIndex] = make([]int, 2) // making each slice of length 2
-	}
+	sliOfSlices := make([][]int, 0) // make a 2D slice of length 0
 
 	fmt.Println(sliOfSlices) // printing the initial slice of slices
 
@@ -53,15 +49,9 @@ func main() {
 	sliOfSlices = append(sliOfSlices, []int{3, 4, 8, 9})
 
 	for outerIndex, sli := range sliOfSlices { // printing the slice of slices with indices and values
-		fmt.Print("outer index ")
-		fmt.Print(outerIndex)
-		fmt.Println(": ")
+		fmt.Printf("outer index: %d =>\n", outerIndex)
 		for innerIndex, value := range sli {
-			fmt.Print("inner index: ")
-			fmt.Print(innerIndex)
-			fmt.Print(" -> value:")
-			fmt.Print(value)
-			fmt.Print(", ")
+			fmt.Printf("inner index: %d -> value: %d, ", innerIndex, value)
 		}
 		fmt.Println()
 	}
