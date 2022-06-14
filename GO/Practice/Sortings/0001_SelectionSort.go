@@ -1,5 +1,9 @@
 package main
 
+/*
+	- Here we will be implementing selection sort
+*/
+
 import "fmt"
 
 func SelectionSort(unsortedArr []int) []int {
