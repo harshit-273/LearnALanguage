@@ -26,9 +26,5 @@ func SelectionSort(unsortedArr []int) []int {
 
 func main() {
 	arr := []int{4, 5, 2, 8, 1, 0, 6, 9, 3, 7}
-	fmt.Print("Before sorting : ")
-	fmt.Println(arr)
-	fmt.Print("After sorting : ")
-	sortedArr := SelectionSort(arr)
-	fmt.Println(sortedArr)
+	fmt.Printf("Before sorting : %v\nAfter sorting : %v", arr, SelectionSort(arr))
 }

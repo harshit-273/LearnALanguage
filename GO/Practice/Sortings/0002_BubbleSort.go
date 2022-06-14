@@ -24,9 +24,5 @@ func BubbleSort(unsortedArr []int) []int {
 
 func main() {
 	arr := []int{9, 8, 7, 6, 5, 4, 3, 2, 1, 0}
-	fmt.Print("Before sorting : ")
-	fmt.Println(arr)
-	fmt.Print("After sorting : ")
-	sortedArr := BubbleSort(arr)
-	fmt.Println(sortedArr)
+	fmt.Printf("Before sorting : %v\nAfter sorting : %v", arr, BubbleSort(arr))
 }
