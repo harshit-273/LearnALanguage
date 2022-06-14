@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+/*
+	- Here we will be finding the key and give it's index in the array using linear search
+*/
+
 func LinearSearch(arr []int, key int) (index int) {
 	index = -1
 	for ind, value := range arr {

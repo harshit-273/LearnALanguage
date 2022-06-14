@@ -1,5 +1,9 @@
 package main
 
+/*
+	Here we will be finding minimum and maximum from the givn array
+*/
+
 import "fmt"
 
 func FindMinMax(arr []int) (min int, max int) {
