@@ -4,6 +4,7 @@ import "fmt"
 
 /*
 	- Here we will be finding the key and give it's index in the array using binary search
+	- Here we are assuming that the array passed is sorted. Binary search works on sorted things
 */
 
 func BinarySearch(arr []int, key int) (index int) {
