@@ -1,0 +1,10 @@
+-------------------------------------- Use of print function --------------------------------------
+
+Syntax:-
+
+    print("some \\thing", "anything", "other thing", end="sometext, by default it is \n")
+
+- there would be space between every thing in double quotes due to ","(comma) except for the last "end"
+- "end" at the last is used to specify how the print statement should end, by default it will add new line
+- we can use any other object to print instead of the statements in the quotes
+- we can use "\"(backslash) as escape character
