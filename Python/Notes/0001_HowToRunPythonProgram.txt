@@ -1,0 +1,6 @@
+-------------------------------------- How to run a python program --------------------------------------
+
+- create a file with ".py" extension
+- make the required modifications to the file
+- open command prompt(terminal/shell/bash) and go to the path where the file is present
+- use command "python fileName.py" and this will run your program 
