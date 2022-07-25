@@ -1,5 +1,0 @@
--------------------------------------- Comments --------------------------------------
-
-- comments are used for the thing which you want to write but do not want them to interfere with the code.
-- single line comment - "#" used before any code will consider it as comment
-- multi line comment - `"""some comment"""` any data between triple single quotes or triple double quotes will be considered as comment 
