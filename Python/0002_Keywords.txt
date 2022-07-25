@@ -1,0 +1,9 @@
+----------------------------------------------- Keywords -----------------------------------------------
+
+- Keywords are the words used in the programming language for it's syntax.
+- These words cannot be used for any other purpose then their defined way to use it in the language.
+
+Following is the list of the keywords used in python:
+
+False	await	else	import	pass	None	break	except	in	raise	True	class	finally	is	return	and	continue	for	lambda	try
+as	def	from	nonlocal	while	assert	del	global	not	with	async	elif	if	or	yield
