@@ -49,7 +49,21 @@ func MaxSubArray_CumulativeSum(arr []int) (maxSum int) {
 	return
 }
 
+func MaxSubArray_KadaneAlgo(arr []int) (maxSum int) {
+	maxSum = math.MinInt
+	curSum := 0
+	for _, value := range arr {
+		curSum += value
+		if curSum < 0 {
+			curSum = 0
+		}
+		maxSum = int(math.Max(float64(maxSum), float64(curSum)))
+	}
+	return
+}
+
 func main() {
 	fmt.Printf("Maximum sum of subarray is %d\n", MaxSubArray_BruteForce([]int{5, -3, 4, 2}))
 	fmt.Printf("Maximum sum of subarray is %d\n", MaxSubArray_CumulativeSum([]int{5, -3, 4, 2}))
+	fmt.Printf("Maximum sum of subarray is %d\n", MaxSubArray_KadaneAlgo([]int{-1, 4, -6, 7, -4}))
 }
